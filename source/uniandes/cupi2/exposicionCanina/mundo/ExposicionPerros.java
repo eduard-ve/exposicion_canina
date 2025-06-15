@@ -517,4 +517,27 @@ public class ExposicionPerros
         return razaMasComun;
     }
         
+
+    public String darEstadisticasClave( )
+    {
+    	Map<String, String> estadisticas = new LinkedHashMap<>(); // Mantiene el orden de inserción
+
+        // Manejo del caso sin perros para evitar errores y mostrar "N/A"
+        if (perros.isEmpty()) {
+            estadisticas.put("Total de Perros", "0");
+            estadisticas.put("Edad Promedio", "N/A");
+            estadisticas.put("Puntaje Promedio", "N/A");
+            estadisticas.put("Raza Más Común", "N/A");
+            return estadisticas;
+        }
+
+        estadisticas.put("Total de Perros", String.valueOf(getTotalPerros()));
+        estadisticas.put("Edad Promedio", String.format("%.2f meses", getEdadPromedioPerros()));
+        estadisticas.put("Puntaje Promedio", String.format("%.2f puntos", getPuntajePromedioPerros()));
+        estadisticas.put("Raza Más Común", getRazaMasComun());
+        
+        return estadisticas;
+    }
+
+ 
 }
