@@ -86,10 +86,10 @@ public class PanelExtension extends JPanel implements ActionListener
     private void inicializar( )
     {
 
-        setBorder( new TitledBorder( "Puntos de Extensi�n" ) );
+        setBorder( new TitledBorder( "Puntos de Extension" ) );
 
         setLayout( new FlowLayout( ) );
-        botonOpcion1 = new JButton( "Opci�n 1" );
+        botonOpcion1 = new JButton( "Ver Estadistica" );
         botonOpcion1.setActionCommand( OPCION_1 );
         botonOpcion1.addActionListener( this );
 
