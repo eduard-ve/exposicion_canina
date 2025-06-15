@@ -1,7 +1,7 @@
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * $Id: PanelBusquedaOrdenamientos.java,v 1.4 2006/08/04 15:12:57 da-romer Exp $ 
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación 
+ * Universidad de los Andes (Bogoto - Colombia)
+ * Departamento de IngenierÃ­a de Sistemas y ComputaciÃ³n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
@@ -18,7 +18,7 @@ import javax.swing.*;
 import javax.swing.border.*;
 
 /**
- * Este es el panel donde se encuentran los botones para realizar los ordenamientos por distintos criterios y las búsquedas.
+ * Este es el panel donde se encuentran los botones para realizar los ordenamientos por distintos criterios y las bÃºsquedas.
  */
 public class PanelBusquedaOrdenamientos extends JPanel implements ActionListener
 {
@@ -47,22 +47,22 @@ public class PanelBusquedaOrdenamientos extends JPanel implements ActionListener
     // Atributos de la Interfaz
     // -----------------------------------------------------------------
     /**
-     * Es el botón para ordenar la lista de perros por raza
+     * Es el botÃ³n para ordenar la lista de perros por raza
      */
     private JButton botonOrdenarRaza;
 
     /**
-     * Es el botón para ordenar la lista de perros por puntos
+     * Es el botÃ³n para ordenar la lista de perros por puntos
      */
     private JButton botonOrdenarPuntos;
 
     /**
-     * Es el botón para ordenar la lista de perros por edad
+     * Es el botÃ³n para ordenar la lista de perros por edad
      */
     private JButton botonOrdenarEdad;
 
     /**
-     * Es el botón para realizar una búsqueda
+     * Es el botÃ³n para realizar una bÃºsqueda
      */
     private JButton botonBuscar;
 
@@ -79,7 +79,7 @@ public class PanelBusquedaOrdenamientos extends JPanel implements ActionListener
         principal = ventanaPrincipal;
 
         setPreferredSize( new Dimension( 200, 0 ) );
-        setBorder( new CompoundBorder( new EmptyBorder( 4, 3, 3, 3 ), new TitledBorder( "Búsqueda y ordenamientos" ) ) );
+        setBorder( new CompoundBorder( new EmptyBorder( 4, 3, 3, 3 ), new TitledBorder( "BÃºsqueda y ordenamientos" ) ) );
         setLayout( new GridBagLayout( ) );
 
         botonOrdenarRaza = new JButton( "Ordenar por Raza" );
@@ -124,8 +124,8 @@ public class PanelBusquedaOrdenamientos extends JPanel implements ActionListener
     }
 
     /**
-     * Ejecuta una acción según el botón que se haya presionado.
-     * @param evento es el evento de click sobre un botón
+     * Ejecuta una acciÃ³n segÃºn el botÃ³n que se haya presionado.
+     * @param evento es el evento de click sobre un botÃ³n
      */
     public void actionPerformed( ActionEvent evento )
     {

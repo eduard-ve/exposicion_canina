@@ -1,12 +1,12 @@
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * $Id: PanelAgregarPerro.java,v 1.6 2006/08/04 15:12:57 da-romer Exp $ 
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación 
+ * Universidad de los Andes (BogotÃ¡ - Colombia)
+ * Departamento de IngenierÃ­a de Sistemas y ComputaciÃ³n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
- * Ejercicio: n7_exposicionCanina 
- * Autor: Mario Sánchez - 26/08/2005
+ * Ejercicio: n8_exposicionCanina 
+ * Autor: Mario SÃ¡nchez - 26/08/2005
  * Modificado por: Daniel Romero- 30/06/2006 
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
  */
@@ -96,12 +96,12 @@ public class PanelAgregarPerro extends JPanel implements ActionListener
     private JLabel etiquetaEdad;
 
     /**
-     * Es el botón que se usa para agregar un perro
+     * Es el botÃ³n que se usa para agregar un perro
      */
     private JButton botonAgregar;
 
     /**
-     * Es el botón que se usa para examinar el disco buscando la imagen del perro
+     * Es el botÃ³n que se usa para examinar el disco buscando la imagen del perro
      */
     private JButton botonExaminar;
 
@@ -192,7 +192,7 @@ public class PanelAgregarPerro extends JPanel implements ActionListener
         botonExaminar.setActionCommand( BUSCAR );
         botonExaminar.addActionListener( this );
 
-        // Botón agregar
+        // BotÃ³n agregar
         JPanel panelBoton = new JPanel( );
         botonAgregar = new JButton( "Agregar Perro" );
         botonAgregar.setActionCommand( AGREGAR );
@@ -232,12 +232,12 @@ public class PanelAgregarPerro extends JPanel implements ActionListener
     }
 
     // -----------------------------------------------------------------
-    // Métodos
+    // MÃ©todos
     // -----------------------------------------------------------------
 
     /**
-     * Este es el método que se ejecuta cuando se hace click sobre un botón.
-     * @param evento es el evento del click sobre el botón
+     * Este es el mÃ©todo que se ejecuta cuando se hace click sobre un botÃ³n.
+     * @param evento es el evento del click sobre el botÃ³n
      */
     public void actionPerformed( ActionEvent evento )
     {
@@ -278,7 +278,7 @@ public class PanelAgregarPerro extends JPanel implements ActionListener
             }
             catch( NumberFormatException e )
             {
-                JOptionPane.showMessageDialog( this, "Los campos de puntos y edad deben ser números", "Error", JOptionPane.ERROR_MESSAGE );
+                JOptionPane.showMessageDialog( this, "Los campos de puntos y edad deben ser nÃºmeros", "Error", JOptionPane.ERROR_MESSAGE );
             }
         }
         else if( BUSCAR.equals( comando ) )
@@ -298,3 +298,5 @@ public class PanelAgregarPerro extends JPanel implements ActionListener
     }
 
 }
+
+
