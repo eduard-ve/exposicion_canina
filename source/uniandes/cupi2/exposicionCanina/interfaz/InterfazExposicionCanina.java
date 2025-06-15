@@ -92,7 +92,7 @@ public class InterfazExposicionCanina extends JFrame
         cargarPerros( archivoPerros );
 
         setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-        setTitle( "Exposici�n Canina" );
+        setTitle( "Exposición Canina" );
         setSize( new Dimension( 700, 550 ) );
         setResizable( false );
 
@@ -364,7 +364,7 @@ public class InterfazExposicionCanina extends JFrame
         }
         else
         {
-            JOptionPane.showMessageDialog( this, "No hay perros registrados en la exposici�n" );
+            JOptionPane.showMessageDialog( this, "No hay perros registrados en la exposición" );
         }
     }
 
@@ -385,7 +385,7 @@ public class InterfazExposicionCanina extends JFrame
         }
         else
         {
-            JOptionPane.showMessageDialog( this, "No hay perros registrados en la exposici�n" );
+            JOptionPane.showMessageDialog( this, "No hay perros registrados en la exposición" );
         }
     }
 

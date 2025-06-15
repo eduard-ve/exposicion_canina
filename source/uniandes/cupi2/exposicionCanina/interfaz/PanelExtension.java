@@ -101,7 +101,7 @@ public class PanelExtension extends JPanel implements ActionListener
         botonOpcion1.setActionCommand( OPCION_1 );
         botonOpcion1.addActionListener( this );
 
-        botonOpcion2 = new JButton( "Opci�n 2" );
+        botonOpcion2 = new JButton( "Opción 2" );
         botonOpcion2.setActionCommand( OPCION_2 );
         botonOpcion2.addActionListener( this );
 

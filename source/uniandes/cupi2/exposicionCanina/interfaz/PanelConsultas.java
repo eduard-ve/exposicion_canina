@@ -1,7 +1,7 @@
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * $Id: PanelConsultas.java,v 1.4 2006/08/04 15:12:57 da-romer Exp $ 
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación 
+ * Universidad de los Andes (Bogotï¿½ - Colombia)
+ * Departamento de Ingenierï¿½a de Sistemas y Computaciï¿½n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
@@ -18,7 +18,7 @@ import javax.swing.*;
 import javax.swing.border.*;
 
 /**
- * Este es el panel donde se encuentran los botones para hacer consulta sobre la exposición
+ * Este es el panel donde se encuentran los botones para hacer consulta sobre la exposiciï¿½n
  * 
  */
 public class PanelConsultas extends JPanel implements ActionListener
@@ -47,17 +47,17 @@ public class PanelConsultas extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Es el botón para mostrar el nombre del perro ganador
+     * Es el botï¿½n para mostrar el nombre del perro ganador
      */
     private JButton botonGanador;
 
     /**
-     * Es el botón para mostrar el perro con menos puntos
+     * Es el botï¿½n para mostrar el perro con menos puntos
      */
     private JButton botonMenosPuntos;
 
     /**
-     * Es el botón para mostrar el nombre del perro con mayor edad
+     * Es el botï¿½n para mostrar el nombre del perro con mayor edad
      */
     private JButton botonMayorEdad;
 
@@ -72,7 +72,7 @@ public class PanelConsultas extends JPanel implements ActionListener
     {
         principal = ventanaPrincipal;
         setLayout( new GridLayout( 4, 1, 10, 10 ) );
-        setBorder( new CompoundBorder( new EmptyBorder( 4, 3, 3, 3 ), new TitledBorder( "Consultas Exposición" ) ) );
+        setBorder( new CompoundBorder( new EmptyBorder( 4, 3, 3, 3 ), new TitledBorder( "Consultas ExposiciÃ³n" ) ) );
 
         // Ganador
         botonGanador = new JButton( "Ganador" );
@@ -87,19 +87,19 @@ public class PanelConsultas extends JPanel implements ActionListener
         add( botonMenosPuntos );
 
         // Mayos edad
-        botonMayorEdad = new JButton( "Más Viejo" );
+        botonMayorEdad = new JButton( "MÃ¡s Viejo" );
         botonMayorEdad.addActionListener( this );
         botonMayorEdad.setActionCommand( MAYOR_EDAD );
         add( botonMayorEdad );
     }
 
     // -----------------------------------------------------------------
-    // Métodos
+    // Mï¿½todos
     // -----------------------------------------------------------------
 
     /**
-     * Ejecuta una acción según el botón que se haya presionado.
-     * @param evento es el evento de click sobre un botón
+     * Ejecuta una acciï¿½n segï¿½n el botï¿½n que se haya presionado.
+     * @param evento es el evento de click sobre un botï¿½n
      */
     public void actionPerformed( ActionEvent evento )
     {
