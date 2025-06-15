@@ -377,6 +377,7 @@ public class ExposicionPerros
         return false;
     }
 
+
  // -----------------------------------------------------------------
     // Puntos de Extensión
     // -----------------------------------------------------------------
@@ -436,11 +437,50 @@ public class ExposicionPerros
     /**
      * Ejecuta el punto de extensi�n 1.
      * @return respuesta 1
-     */
-    public String metodo1( )
-    {
-        return "respuesta1";
-    }
+=======
+    // -----------------------------------------------------------------
+    // Métodos Auxiliares para Estadísticas
+    // -----------------------------------------------------------------
 
+    /**
+     * Retorna el número total de perros en la exposición.
+     * @return El número de perros.
+>>>>>>> 755e026 (implementacion de los metodos que calculan la edad promedio y el puntaje promedio)
+     */
+    public int getTotalPerros() {
+    	return perros.size();
+    }
+    
+    /**
+     * Calcula la edad promedio de todos los perros en la exposición.
+     * @return La edad promedio en meses, o 0.0 si no hay perros.
+     */
+    public double getEdadPromedioPerros() {
+        if (perros.isEmpty()) {
+            return 0.0;
+        }
+        double sumaEdades = 0;
+        for (Object obj : perros) {
+            Perro perro = (Perro) obj;
+            sumaEdades += perro.darEdad();
+        }
+        return sumaEdades / perros.size();
+    }
+    
+    /**
+     * Calcula el puntaje promedio de todos los perros en la exposición.
+     * @return El puntaje promedio, o 0.0 si no hay perros.
+     */
+    public double getPuntajePromedioPerros() {
+        if (perros.isEmpty()) {
+            return 0.0;
+        }
+        double sumaPuntos = 0;
+        for (Object obj : perros) {
+            Perro perro = (Perro) obj;
+            sumaPuntos += perro.darPuntos();
+        }
+        return sumaPuntos / perros.size();
+    }
     
 }
