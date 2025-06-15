@@ -1,0 +1,27 @@
+
+# Archivos de Eclipse
+.settings/
+.project
+.classpath
+
+# Archivos compilados
+*.class
+
+# Directorios de salida
+/bin/
+/build/
+/target/
+/classes/
+/out/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de pruebas
+test/classes/
+
+# Archivos de configuración personal
+*.log
+*.swp
+

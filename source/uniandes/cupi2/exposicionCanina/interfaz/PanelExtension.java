@@ -1,12 +1,12 @@
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * $Id: PanelExtension.java,v 1.4 2006/08/06 20:34:34 da-romer Exp $ 
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación 
+ * Universidad de los Andes (Bogotï¿½ - Colombia)
+ * Departamento de Ingenierï¿½a de Sistemas y Computaciï¿½n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
  * Ejercicio: n7_exposicionCanina 
- * Autor: Mario Sánchez - 25/08/2005
+ * Autor: Mario Sï¿½nchez - 25/08/2005
  * Modificado por: Daniel Romero- 30/06/2006  
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
  */
@@ -20,7 +20,7 @@ import javax.swing.*;
 import javax.swing.border.*;
 
 /**
- * Es el panel que contiene los botones de extensión
+ * Es el panel que contiene los botones de extensiï¿½n
  */
 public class PanelExtension extends JPanel implements ActionListener
 {
@@ -29,12 +29,12 @@ public class PanelExtension extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * El comando para el botón 1
+     * El comando para el botï¿½n 1
      */
-    private final String OPCION_1 = "opcion 1";
+    private final String OPCION_1 = "VER_ESTADISTICAS";
 
     /**
-     * El comando para el botón 2
+     * El comando para el botï¿½n 2
      */
     private final String OPCION_2 = "opcion 2";
 
@@ -43,7 +43,7 @@ public class PanelExtension extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Es la referencia a la interfaz de la aplicación
+     * Es la referencia a la interfaz de la aplicaciï¿½n
      */
     private InterfazExposicionCanina principal;
 
@@ -52,12 +52,12 @@ public class PanelExtension extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Es el botón 1
+     * Es el botï¿½n 1
      */
     private JButton botonOpcion1;
 
     /**
-     * Es el botón 2
+     * Es el botï¿½n 2
      */
     private JButton botonOpcion2;
 
@@ -66,7 +66,7 @@ public class PanelExtension extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Construye el panel con una referencia a la ventana principal de la aplicación.
+     * Construye el panel con una referencia a la ventana principal de la aplicaciï¿½n.
      * @param iec es una referencia a la ventana principal - ie!=null
      */
     public PanelExtension( InterfazExposicionCanina iec )
@@ -76,7 +76,7 @@ public class PanelExtension extends JPanel implements ActionListener
     }
 
     // -----------------------------------------------------------------
-    // Métodos
+    // Mï¿½todos
     // -----------------------------------------------------------------
 
     /**
@@ -85,14 +85,23 @@ public class PanelExtension extends JPanel implements ActionListener
      */
     private void inicializar( )
     {
-        setBorder( new TitledBorder( "Puntos de Extensión" ) );
+
+        setBorder( new TitledBorder( "Puntos de Extension" ) );
 
         setLayout( new FlowLayout( ) );
-        botonOpcion1 = new JButton( "Opción 1" );
+        botonOpcion1 = new JButton( "Ver Estadistica" );
         botonOpcion1.setActionCommand( OPCION_1 );
         botonOpcion1.addActionListener( this );
 
-        botonOpcion2 = new JButton( "Opción 2" );
+        botonOpcion2 = new JButton( "Perro mÃ¡s joven" );
+        setBorder( new TitledBorder( "Puntos de Extension" ) );
+
+        setLayout( new FlowLayout( ) );
+        botonOpcion1 = new JButton( "Ver Estadisticas" );
+        botonOpcion1.setActionCommand( OPCION_1 );
+        botonOpcion1.addActionListener( this );
+
+        botonOpcion2 = new JButton( "Opciï¿½n 2" );
         botonOpcion2.setActionCommand( OPCION_2 );
         botonOpcion2.addActionListener( this );
 
@@ -101,8 +110,8 @@ public class PanelExtension extends JPanel implements ActionListener
     }
 
     /**
-     * Este método se llama cuando se presiona uno de los botones.
-     * @param event es el evento del click en el botón
+     * Este mï¿½todo se llama cuando se presiona uno de los botones.
+     * @param event es el evento del click en el botï¿½n
      */
     public void actionPerformed( ActionEvent event )
     {

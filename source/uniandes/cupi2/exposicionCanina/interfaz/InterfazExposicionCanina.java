@@ -1,12 +1,12 @@
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * $Id: InterfazExposicionCanina.java,v 1.10 2010/03/29 20:47:53 lr.ruiz114 Exp $ 
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación 
+ * Universidad de los Andes (Bogotï¿½ - Colombia)
+ * Departamento de Ingenierï¿½a de Sistemas y Computaciï¿½n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
  * Ejercicio: n7_exposicionCanina 
- * Autor: Mario Sánchez - 26/08/2005
+ * Autor: Mario Sï¿½nchez - 26/08/2005
  * Modificado por: Daniel Romero- 30/06/2006 
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
  */
@@ -17,6 +17,7 @@ import java.io.*;
 import java.util.*;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 
 import uniandes.cupi2.exposicionCanina.mundo.*;
 
@@ -30,7 +31,7 @@ public class InterfazExposicionCanina extends JFrame
     // -----------------------------------------------------------------
 
     /**
-     * La ruta del archivo con la información de los perros
+     * La ruta del archivo con la informaciï¿½n de los perros
      */
     public static final String ARCHIVO_PERROS = "./data/perros.txt";
 
@@ -39,7 +40,7 @@ public class InterfazExposicionCanina extends JFrame
     // -----------------------------------------------------------------
 
     /**
-     * Es una referencia a la exposición de perros
+     * Es una referencia a la exposiciï¿½n de perros
      */
     private ExposicionPerros exposicion;
 
@@ -63,17 +64,17 @@ public class InterfazExposicionCanina extends JFrame
     private PanelAgregarPerro panelAgregar;
 
     /**
-     * Es el panel donde están los botones para los puntos de extensión
+     * Es el panel donde estï¿½n los botones para los puntos de extensiï¿½n
      */
     private PanelExtension panelExtension;
 
     /**
-     * Es el panel donde están los botones para la realización de ordenamientos y búsqueda
+     * Es el panel donde estï¿½n los botones para la realizaciï¿½n de ordenamientos y bï¿½squeda
      */
     private PanelBusquedaOrdenamientos panelBusquedaOrdenamientos;
 
     /**
-     * Es el panel donde están las opciones para la realización de consultas
+     * Es el panel donde estï¿½n las opciones para la realizaciï¿½n de consultas
      */
     private PanelConsultas panelConsultas;
 
@@ -83,7 +84,7 @@ public class InterfazExposicionCanina extends JFrame
 
     /**
      * Construye la interfaz e inicializa todos sus componentes.
-     * @param archivoPerros es el nombre del archivo de propiedades que contiene la información de los perros
+     * @param archivoPerros es el nombre del archivo de propiedades que contiene la informaciï¿½n de los perros
      */
     public InterfazExposicionCanina( String archivoPerros )
     {
@@ -91,7 +92,7 @@ public class InterfazExposicionCanina extends JFrame
         cargarPerros( archivoPerros );
 
         setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-        setTitle( "Exposición Canina" );
+        setTitle( "Exposiciï¿½n Canina" );
         setSize( new Dimension( 700, 550 ) );
         setResizable( false );
 
@@ -164,7 +165,7 @@ public class InterfazExposicionCanina extends JFrame
     }
 
     // -----------------------------------------------------------------
-    // Métodos
+    // Mï¿½todos
     // -----------------------------------------------------------------
 
     /**
@@ -224,7 +225,7 @@ public class InterfazExposicionCanina extends JFrame
             }
             else
             {
-                JOptionPane.showMessageDialog( this, "No se encontró el perro" );
+                JOptionPane.showMessageDialog( this, "No se encontrï¿½ el perro" );
             }
         }
     }
@@ -261,8 +262,8 @@ public class InterfazExposicionCanina extends JFrame
     }
 
     /**
-     * Carga los perros iniciales de la exposición a partir de un archivo de propiedades.
-     * @param archivo nombre del archivo de propiedades que contiene la información de los perros - archivo!=null
+     * Carga los perros iniciales de la exposiciï¿½n a partir de un archivo de propiedades.
+     * @param archivo nombre del archivo de propiedades que contiene la informaciï¿½n de los perros - archivo!=null
      */
     private void cargarPerros( String archivo )
     {
@@ -308,7 +309,7 @@ public class InterfazExposicionCanina extends JFrame
                 aux = propiedades.getProperty( dato );
                 edad = Integer.parseInt( aux );
 
-                // Sólo se carga el perro si los datos son correctos
+                // Sï¿½lo se carga el perro si los datos son correctos
                 if( nombre != null && raza != null && imagen != null && puntos >= 0 && edad > 0 )
                     exposicion.agregarPerro( nombre, raza, imagen, puntos, edad );
                 fis.close( );
@@ -342,12 +343,12 @@ public class InterfazExposicionCanina extends JFrame
         }
         else
         {
-            JOptionPane.showMessageDialog( this, "No hay perros registrados en la exposición" );
+            JOptionPane.showMessageDialog( this, "No hay perros registrados en la exposiciï¿½n" );
         }
     }
 
     /**
-     * Busca el perro con menor puntaje en la exposición y muestra sus datos en el panel de datos
+     * Busca el perro con menor puntaje en la exposiciï¿½n y muestra sus datos en el panel de datos
      * 
      */
     public void buscarMenorPuntaje( )
@@ -363,7 +364,7 @@ public class InterfazExposicionCanina extends JFrame
         }
         else
         {
-            JOptionPane.showMessageDialog( this, "No hay perros registrados en la exposición" );
+            JOptionPane.showMessageDialog( this, "No hay perros registrados en la exposiciï¿½n" );
         }
     }
 
@@ -384,25 +385,67 @@ public class InterfazExposicionCanina extends JFrame
         }
         else
         {
-            JOptionPane.showMessageDialog( this, "No hay perros registrados en la exposición" );
+            JOptionPane.showMessageDialog( this, "No hay perros registrados en la exposiciï¿½n" );
         }
     }
 
     // -----------------------------------------------------------------
-    // Puntos de Extensión
+    // Puntos de Extensiï¿½n
     // -----------------------------------------------------------------
 
     /**
-     * Ejecuta el punto de extensión 1
+     * Muestra las estadÃ­sticas generales de la exposiciÃ³n en un nuevo diÃ¡logo.
+     * Este mÃ©todo reemplaza la funcionalidad original de reqFuncOpcion1().
+     * Para que funcione, el metodo1() en ExposicionPerros debe retornar un Map<String, String>.
      */
     public void reqFuncOpcion1( )
     {
-        String respuesta = exposicion.metodo1( );
-        JOptionPane.showMessageDialog( this, respuesta, "Respuesta", JOptionPane.INFORMATION_MESSAGE );
+
+        // 1. Obtener las estadÃ­sticas del mundo
+        Map<String, String> estadisticas = exposicion.metodo1(); // Llama al mÃ©todo que ahora devuelve el Map
+
+        // 2. Crear y configurar el JDialog
+        JDialog dialogoEstadisticas = new JDialog(this, "EstadÃ­sticas Clave de la ExposiciÃ³n", true); // 'true' para hacerlo modal
+        dialogoEstadisticas.setLayout(new BorderLayout());
+        dialogoEstadisticas.setSize(400, 220); // TamaÃ±o ajustado para 4 estadÃ­sticas
+
+        // Panel para las estadÃ­sticas (usarÃ¡ GridLayout para organizar etiquetas)
+        JPanel panelStats = new JPanel();
+        // GridLayout: filas = nÃºmero de estadÃ­sticas, 2 columnas, 5px de espacio horizontal y vertical
+        panelStats.setLayout(new GridLayout(estadisticas.size(), 2, 5, 5));
+        panelStats.setBorder(new EmptyBorder(10, 10, 10, 10)); // Margen interior
+
+        // Iterar sobre el mapa y aÃ±adir JLabels al panel
+        for (Map.Entry<String, String> entry : estadisticas.entrySet()) {
+            JLabel lblNombre = new JLabel(entry.getKey() + ":");
+            lblNombre.setFont(lblNombre.getFont().deriveFont(Font.BOLD, 14f));
+            panelStats.add(lblNombre);
+
+            JLabel lblValor = new JLabel(entry.getValue());
+            lblValor.setFont(lblValor.getFont().deriveFont(Font.PLAIN, 14f));
+            panelStats.add(lblValor);
+        }
+        
+        dialogoEstadisticas.add(panelStats, BorderLayout.CENTER);
+
+        // BotÃ³n de Cerrar
+        JPanel panelBotonCerrar = new JPanel();
+        JButton btnCerrar = new JButton("Cerrar");
+        btnCerrar.addActionListener(e -> dialogoEstadisticas.dispose()); // Cierra el diÃ¡logo al hacer clic
+        panelBotonCerrar.add(btnCerrar);
+        
+        dialogoEstadisticas.add(panelBotonCerrar, BorderLayout.SOUTH);
+
+        // Centrar el diÃ¡logo en la ventana principal
+        dialogoEstadisticas.setLocationRelativeTo(this);
+        // Hacer visible el diÃ¡logo
+        dialogoEstadisticas.setVisible(true);
     }
 
+    
+
     /**
-     * Ejecuta el punto de extensión 2
+     * Ejecuta el punto de extensiï¿½n 2
      */
     public void reqFuncOpcion2( )
     {
@@ -415,8 +458,8 @@ public class InterfazExposicionCanina extends JFrame
     // -----------------------------------------------------------------
 
     /**
-     * Ejecuta la aplicación
-     * @param args son los parámetros de ejecución de la aplicación. No deben usarse
+     * Ejecuta la aplicaciï¿½n
+     * @param args son los parï¿½metros de ejecuciï¿½n de la aplicaciï¿½n. No deben usarse
      */
     public static void main( String[] args )
     {
