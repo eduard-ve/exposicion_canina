@@ -1,12 +1,12 @@
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * $Id: PanelExtension.java,v 1.4 2006/08/06 20:34:34 da-romer Exp $ 
- * Universidad de los Andes (Bogot· - Colombia)
- * Departamento de IngenierÌa de Sistemas y ComputaciÛn 
+ * Universidad de los Andes (Bogot√° - Colombia)
+ * Departamento de Ingenier√≠a de Sistemas y Computaci√≥n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
  * Ejercicio: n7_exposicionCanina 
- * Autor: Mario S·nchez - 25/08/2005
+ * Autor: Mario Sanchez - 25/08/2005
  * Modificado por: Daniel Romero- 30/06/2006  
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
  */
@@ -20,7 +20,7 @@ import javax.swing.*;
 import javax.swing.border.*;
 
 /**
- * Es el panel que contiene los botones de extensiÛn
+ * Es el panel que contiene los botones de extensi√≥n
  */
 public class PanelExtension extends JPanel implements ActionListener
 {
@@ -29,12 +29,12 @@ public class PanelExtension extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * El comando para el botÛn 1
+     * El comando para el bot√≥n 1
      */
     private final String OPCION_1 = "opcion 1";
 
     /**
-     * El comando para el botÛn 2
+     * El comando para el bot√≥n 2
      */
     private final String OPCION_2 = "opcion 2";
 
@@ -43,7 +43,7 @@ public class PanelExtension extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Es la referencia a la interfaz de la aplicaciÛn
+     * Es la referencia a la interfaz de la aplicaci√≥n
      */
     private InterfazExposicionCanina principal;
 
@@ -52,12 +52,12 @@ public class PanelExtension extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Es el botÛn 1
+     * Es el bot√≥n 1
      */
     private JButton botonOpcion1;
 
     /**
-     * Es el botÛn 2
+     * Es el bot√≥n 2
      */
     private JButton botonOpcion2;
 
@@ -66,7 +66,7 @@ public class PanelExtension extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Construye el panel con una referencia a la ventana principal de la aplicaciÛn.
+     * Construye el panel con una referencia a la ventana principal de la aplicaci√≥n.
      * @param iec es una referencia a la ventana principal - ie!=null
      */
     public PanelExtension( InterfazExposicionCanina iec )
@@ -76,7 +76,7 @@ public class PanelExtension extends JPanel implements ActionListener
     }
 
     // -----------------------------------------------------------------
-    // MÈtodos
+    // M√©todos
     // -----------------------------------------------------------------
 
     /**
@@ -85,14 +85,14 @@ public class PanelExtension extends JPanel implements ActionListener
      */
     private void inicializar( )
     {
-        setBorder( new TitledBorder( "Puntos de ExtensiÛn" ) );
+        setBorder( new TitledBorder( "Puntos de Extensi√≥n" ) );
 
         setLayout( new FlowLayout( ) );
-        botonOpcion1 = new JButton( "OpciÛn 1" );
+        botonOpcion1 = new JButton( "Opci√≥n 1" );
         botonOpcion1.setActionCommand( OPCION_1 );
         botonOpcion1.addActionListener( this );
 
-        botonOpcion2 = new JButton( "OpciÛn 2" );
+        botonOpcion2 = new JButton( "Opci√≥n 2" );
         botonOpcion2.setActionCommand( OPCION_2 );
         botonOpcion2.addActionListener( this );
 
@@ -101,8 +101,8 @@ public class PanelExtension extends JPanel implements ActionListener
     }
 
     /**
-     * Este mÈtodo se llama cuando se presiona uno de los botones.
-     * @param event es el evento del click en el botÛn
+     * Este m√≥todo se llama cuando se presiona uno de los botones.
+     * @param event es el evento del click en el bot√≥n
      */
     public void actionPerformed( ActionEvent event )
     {

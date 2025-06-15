@@ -1,12 +1,12 @@
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * $Id: PanelListaPerros.java,v 1.9 2010/03/29 20:47:53 lr.ruiz114 Exp $ 
- * Universidad de los Andes (Bogot· - Colombia)
- * Departamento de IngenierÌa de Sistemas y ComputaciÛn 
+ * Universidad de los Andes (Bogot√° - Colombia)
+ * Departamento de Ingenier√≠a de Sistemas y Computaci√≥n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
  * Ejercicio: n7_exposicionCanina 
- * Autor: Mario S·nchez - 26/08/2005 
+ * Autor: Mario Sanchez - 26/08/2005 
  * Modificado por: Daniel Romero- 30/06/2006 
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
  */
@@ -22,7 +22,7 @@ import javax.swing.event.*;
 import uniandes.cupi2.exposicionCanina.mundo.*;
 
 /**
- * Es el panel donde se muestra la lista de perros y est·n los botones para interactuar con la lista
+ * Es el panel donde se muestra la lista de perros y est√°n los botones para interactuar con la lista
  */
 public class PanelListaPerros extends JPanel implements ListSelectionListener
 {
@@ -45,7 +45,7 @@ public class PanelListaPerros extends JPanel implements ListSelectionListener
     private JList listaPerros;
 
     /**
-     * Componente de desplazamiento para contener la lista gr·fica
+     * Componente de desplazamiento para contener la lista gr√°fica
      */
     private JScrollPane scroll;
 
@@ -62,7 +62,7 @@ public class PanelListaPerros extends JPanel implements ListSelectionListener
         principal = ventanaPrincipal;
 
         setLayout( new BorderLayout( ) );
-        setBorder( new CompoundBorder( new EmptyBorder( 4, 3, 3, 3 ), new TitledBorder( "Perros en la exposiciÛn" ) ) );
+        setBorder( new CompoundBorder( new EmptyBorder( 4, 3, 3, 3 ), new TitledBorder( "Perros en la exposici√≥n" ) ) );
 
         listaPerros = new JList( );
         listaPerros.setSelectionMode( ListSelectionModel.SINGLE_SELECTION );
@@ -77,11 +77,11 @@ public class PanelListaPerros extends JPanel implements ListSelectionListener
     }
 
     // -----------------------------------------------------------------
-    // MÈtodos
+    // M√©todos
     // -----------------------------------------------------------------
 
     /**
-     * Actualiza la lista de perros que se est· mostrando
+     * Actualiza la lista de perros que se est√° mostrando
      * @param nuevaLista es una lista con los perros que deben mostrarse
      */
     public void refrescarLista( ArrayList nuevaLista )
@@ -92,7 +92,7 @@ public class PanelListaPerros extends JPanel implements ListSelectionListener
 
     /**
      * Selecciona un elemento de la lista
-     * @param seleccionado es la posiciÛn del elemento que se debe seleccionar
+     * @param seleccionado es la posici√≥n del elemento que se debe seleccionar
      */
     public void seleccionar( int seleccionado )
     {
@@ -101,8 +101,8 @@ public class PanelListaPerros extends JPanel implements ListSelectionListener
     }
 
     /**
-     * Cambia la informaciÛn del perro que se est· mostrando de acuerdo al nuevo perro seleccionado
-     * @param e es el evento de cambio el Ìtem seleccionado en la lista
+     * Cambia la informaci√≥n del perro que se est√° mostrando de acuerdo al nuevo perro seleccionado
+     * @param e es el evento de cambio el √≠tem seleccionado en la lista
      */
     public void valueChanged( ListSelectionEvent e )
     {

@@ -1,12 +1,12 @@
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * $Id: InterfazExposicionCanina.java,v 1.10 2010/03/29 20:47:53 lr.ruiz114 Exp $ 
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación 
+ * Universidad de los Andes (Bogota - Colombia)
+ * Departamento de Ingenieriade Sistemas y ComputaciÃ³n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
  * Ejercicio: n7_exposicionCanina 
- * Autor: Mario Sánchez - 26/08/2005
+ * Autor: Mario Sanchez - 26/08/2005
  * Modificado por: Daniel Romero- 30/06/2006 
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
  */
@@ -30,7 +30,7 @@ public class InterfazExposicionCanina extends JFrame
     // -----------------------------------------------------------------
 
     /**
-     * La ruta del archivo con la información de los perros
+     * La ruta del archivo con la informaciÃ³n de los perros
      */
     public static final String ARCHIVO_PERROS = "./data/perros.txt";
 
@@ -39,7 +39,7 @@ public class InterfazExposicionCanina extends JFrame
     // -----------------------------------------------------------------
 
     /**
-     * Es una referencia a la exposición de perros
+     * Es una referencia a la exposiciÃ³n de perros
      */
     private ExposicionPerros exposicion;
 
@@ -63,17 +63,17 @@ public class InterfazExposicionCanina extends JFrame
     private PanelAgregarPerro panelAgregar;
 
     /**
-     * Es el panel donde están los botones para los puntos de extensión
+     * Es el panel donde estÃ¡n los botones para los puntos de extensiÃ³n
      */
     private PanelExtension panelExtension;
 
     /**
-     * Es el panel donde están los botones para la realización de ordenamientos y búsqueda
+     * Es el panel donde estÃ¡n los botones para la realizacion de ordenamientos y busqueda
      */
     private PanelBusquedaOrdenamientos panelBusquedaOrdenamientos;
 
     /**
-     * Es el panel donde están las opciones para la realización de consultas
+     * Es el panel donde estÃ¡n las opciones para la realizacion de consultas
      */
     private PanelConsultas panelConsultas;
 
@@ -83,7 +83,7 @@ public class InterfazExposicionCanina extends JFrame
 
     /**
      * Construye la interfaz e inicializa todos sus componentes.
-     * @param archivoPerros es el nombre del archivo de propiedades que contiene la información de los perros
+     * @param archivoPerros es el nombre del archivo de propiedades que contiene la informacion de los perros
      */
     public InterfazExposicionCanina( String archivoPerros )
     {
@@ -91,7 +91,7 @@ public class InterfazExposicionCanina extends JFrame
         cargarPerros( archivoPerros );
 
         setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-        setTitle( "Exposición Canina" );
+        setTitle( "ExposiciÃ³n Canina" );
         setSize( new Dimension( 700, 550 ) );
         setResizable( false );
 
@@ -164,7 +164,7 @@ public class InterfazExposicionCanina extends JFrame
     }
 
     // -----------------------------------------------------------------
-    // Métodos
+    // Metodos
     // -----------------------------------------------------------------
 
     /**
@@ -224,7 +224,7 @@ public class InterfazExposicionCanina extends JFrame
             }
             else
             {
-                JOptionPane.showMessageDialog( this, "No se encontró el perro" );
+                JOptionPane.showMessageDialog( this, "No se encontrÃ³ el perro" );
             }
         }
     }
@@ -261,8 +261,8 @@ public class InterfazExposicionCanina extends JFrame
     }
 
     /**
-     * Carga los perros iniciales de la exposición a partir de un archivo de propiedades.
-     * @param archivo nombre del archivo de propiedades que contiene la información de los perros - archivo!=null
+     * Carga los perros iniciales de la exposiciÃ³n a partir de un archivo de propiedades.
+     * @param archivo nombre del archivo de propiedades que contiene la informaciÃ³n de los perros - archivo!=null
      */
     private void cargarPerros( String archivo )
     {
@@ -308,7 +308,7 @@ public class InterfazExposicionCanina extends JFrame
                 aux = propiedades.getProperty( dato );
                 edad = Integer.parseInt( aux );
 
-                // Sólo se carga el perro si los datos son correctos
+                // Solo se carga el perro si los datos son correctos
                 if( nombre != null && raza != null && imagen != null && puntos >= 0 && edad > 0 )
                     exposicion.agregarPerro( nombre, raza, imagen, puntos, edad );
                 fis.close( );
@@ -342,12 +342,12 @@ public class InterfazExposicionCanina extends JFrame
         }
         else
         {
-            JOptionPane.showMessageDialog( this, "No hay perros registrados en la exposición" );
+            JOptionPane.showMessageDialog( this, "No hay perros registrados en la exposiciÃ³n" );
         }
     }
 
     /**
-     * Busca el perro con menor puntaje en la exposición y muestra sus datos en el panel de datos
+     * Busca el perro con menor puntaje en la exposiciÃ³n y muestra sus datos en el panel de datos
      * 
      */
     public void buscarMenorPuntaje( )
@@ -363,7 +363,7 @@ public class InterfazExposicionCanina extends JFrame
         }
         else
         {
-            JOptionPane.showMessageDialog( this, "No hay perros registrados en la exposición" );
+            JOptionPane.showMessageDialog( this, "No hay perros registrados en la exposiciÃ³n" );
         }
     }
 
@@ -384,16 +384,16 @@ public class InterfazExposicionCanina extends JFrame
         }
         else
         {
-            JOptionPane.showMessageDialog( this, "No hay perros registrados en la exposición" );
+            JOptionPane.showMessageDialog( this, "No hay perros registrados en la exposiciÃ³n" );
         }
     }
 
     // -----------------------------------------------------------------
-    // Puntos de Extensión
+    // Puntos de ExtensiÃ³n
     // -----------------------------------------------------------------
 
     /**
-     * Ejecuta el punto de extensión 1
+     * Ejecuta el punto de extensiÃ³n 1
      */
     public void reqFuncOpcion1( )
     {
@@ -402,7 +402,7 @@ public class InterfazExposicionCanina extends JFrame
     }
 
     /**
-     * Ejecuta el punto de extensión 2
+     * Ejecuta el punto de extensiÃ³n 2
      */
     public void reqFuncOpcion2( )
     {
@@ -415,8 +415,8 @@ public class InterfazExposicionCanina extends JFrame
     // -----------------------------------------------------------------
 
     /**
-     * Ejecuta la aplicación
-     * @param args son los parámetros de ejecución de la aplicación. No deben usarse
+     * Ejecuta la aplicaciÃ³n
+     * @param args son los parametros de ejecucion de la aplicaciÃ³n. No deben usarse
      */
     public static void main( String[] args )
     {

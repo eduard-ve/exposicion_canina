@@ -1,15 +1,15 @@
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * $Id: PanelDatosPerro.java,v 1.4 2006/11/23 00:10:37 da-romer Exp $ 
- * Universidad de los Andes (Bogot· - Colombia)
- * Departamento de IngenierÌa de Sistemas y ComputaciÛn 
+ * Universidad de los Andes (Bogot√° - Colombia)
+ * Departamento de Ingenier√≠a de Sistemas y Computaci√≥n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
- * Las im·genes de los perros fueron tomadas de:
+ * Las im√°genes de los perros fueron tomadas de:
  * http://www.mascotanet.com
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
  * Ejercicio: n7_exposicionCanina 
- * Autor: Mario S·nchez - 26/08/2005 
+ * Autor: Mario Sanchez - 26/08/2005 
  * Modificado por: Daniel Romero- 30/06/2006 
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
  */
@@ -145,7 +145,7 @@ public class PanelDatosPerro extends JPanel
     }
 
     // -----------------------------------------------------------------
-    // MÈtodos
+    // M√©todos
     // -----------------------------------------------------------------
 
     /**
