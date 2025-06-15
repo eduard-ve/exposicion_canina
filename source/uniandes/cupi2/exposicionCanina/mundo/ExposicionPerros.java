@@ -1,18 +1,18 @@
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * $Id: ExposicionPerros.java,v 1.5 2006/08/04 15:12:57 da-romer Exp $ 
- * Universidad de los Andes (Bogot� - Colombia)
- * Departamento de Ingenier�a de Sistemas y Computaci�n 
- * Licenciado bajo el esquema Academic Free License version 2.1 
+ * $Id: ExposicionPerros.java,v 1.5 2006/08/04 15:12:57 da-romer Exp $
+ * Universidad de los Andes (Bogotá - Colombia)
+ * Departamento de Ingeniería de Sistemas y Computación
+ * Licenciado bajo el esquema Academic Free License version 2.1
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
- * Ejercicio: n7_exposicionCanina 
- * Autor: Mario S�nchez - 26/08/2005 
+ * Ejercicio: n7_exposicionCanina
+ * Autor: Mario Sánchez - 26/08/2005
  * Modificado por: Daniel Romero- 30/06/2006
- * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 package uniandes.cupi2.exposicionCanina.mundo;
 
-import java.util.*;
+import java.util.*; // Asegúrate de que esto está presente para Map, HashMap, ArrayList, Set, LinkedHashMap, HashSet
 
 /**
  * Es la clase que se encarga de manejar, organizar, cargar y salvar los perros. <br>
@@ -29,37 +29,37 @@ public class ExposicionPerros
     /**
      * Es el vector que contiene todos los perros
      */
-    private ArrayList perros;
+    private ArrayList<Perro> perros; // Usar genéricos para ArrayList<Perro>
 
     // -----------------------------------------------------------------
     // Constructores
     // -----------------------------------------------------------------
 
     /**
-     * Construye un nuevo manejador de perros vac�o.
+     * Construye un nuevo manejador de perros vacío.
      */
     public ExposicionPerros( )
     {
-        perros = new ArrayList( );
+        perros = new ArrayList<Perro>( ); // Usar genéricos
     }
 
     // -----------------------------------------------------------------
-    // M�todos
+    // Métodos
     // -----------------------------------------------------------------
 
     /**
      * Retorna una lista de perros. La lista que se retorna no es la misma que la almacenada en esta clase, pero si tiene el mismo orden.
      * @return Lista de perros
      */
-    public ArrayList darPerros( )
+    public ArrayList<Perro> darPerros( ) // Usar genéricos
     {
-        ArrayList copiaLista = new ArrayList( perros );
+        ArrayList<Perro> copiaLista = new ArrayList<Perro>( perros ); // Usar genéricos
         return copiaLista;
     }
 
     /**
      * Organiza la lista de perros por raza usando el algoritmo de burbuja. <br>
-     * <b>post: </b>La lista de perros est� ordenada por raza (orden ascendente).
+     * <b>post: </b>La lista de perros está ordenada por raza (orden ascendente).
      */
     public void ordenarPorRaza( )
     {
@@ -67,8 +67,8 @@ public class ExposicionPerros
         {
             for( int j = 0; j < i - 1; j++ )
             {
-                Perro p1 = ( Perro )perros.get( j );
-                Perro p2 = ( Perro )perros.get( j + 1 );
+                Perro p1 = perros.get( j ); // Sin cast si usas genéricos
+                Perro p2 = perros.get( j + 1 ); // Sin cast si usas genéricos
 
                 // Si es necesario se deben intercambiar p1 y p2
                 if( p1.compararPorRaza( p2 ) > 0 )
@@ -83,7 +83,7 @@ public class ExposicionPerros
 
     /**
      * Organiza la lista de perros por nombre usando el algoritmo de burbuja. <br>
-     * <b>post: </b>La lista de perros est� ordenada por nombre (orden ascendente).
+     * <b>post: </b>La lista de perros está ordenada por nombre (orden ascendente).
      */
     public void ordenarPorNombre( )
     {
@@ -91,8 +91,8 @@ public class ExposicionPerros
         {
             for( int j = 0; j < i - 1; j++ )
             {
-                Perro p1 = ( Perro )perros.get( j );
-                Perro p2 = ( Perro )perros.get( j + 1 );
+                Perro p1 = perros.get( j ); // Sin cast si usas genéricos
+                Perro p2 = perros.get( j + 1 ); // Sin cast si usas genéricos
 
                 // Si es necesario se deben intercambiar p1 y p2
                 if( p1.compararPorNombre( p2 ) > 0 )
@@ -105,18 +105,18 @@ public class ExposicionPerros
         verificarInvariante( );
     }
     /**
-     * Organiza la lista de perros por puntos usando el algoritmo de inserci�n. <br>
-     * <b>post: </b>La lista de perros est� ordenada por puntos (orden ascendente).
+     * Organiza la lista de perros por puntos usando el algoritmo de inserción. <br>
+     * <b>post: </b>La lista de perros está ordenada por puntos (orden ascendente).
      */
     public void ordenarPorPuntos( )
     {
         for( int i = 1; i < perros.size( ); i++ )
         {
-            Perro porInsertar = ( Perro )perros.get( i );
+            Perro porInsertar = perros.get( i ); // Sin cast si usas genéricos
             boolean termino = false;
             for( int j = i; j > 0 && !termino; j-- )
             {
-                Perro actual = ( Perro )perros.get( j - 1 );
+                Perro actual = perros.get( j - 1 ); // Sin cast si usas genéricos
                 if( actual.compararPorPuntos( porInsertar ) > 0 )
                 {
                     perros.set( j, actual );
@@ -130,29 +130,29 @@ public class ExposicionPerros
     }
 
     /**
-     * Organiza la lista de perros por edad usando el algoritmo de selecci�n. <br>
-     * <b>post: </b>La lista de perros est� ordenada por edad (orden ascendente).
+     * Organiza la lista de perros por edad usando el algoritmo de selección. <br>
+     * <b>post: </b>La lista de perros está ordenada por edad (orden ascendente).
      */
     public void ordenarPorEdad( )
     {
         int inicial;
 
-        // En cada iteraci�n se sabe que:
-        // 1. Todos los valores antes de perros[inicial] est�n ordenados por edad
-        // 2. No hay ning�n valor despu�s de perros[inicial-1] que sea menor que perros[inicial-1]
-        // En cada iteraci�n se busca el menor entre perros[inicial] y perros[final] y se ubica en perros[inicial]
+        // En cada iteración se sabe que:
+        // 1. Todos los valores antes de perros[inicial] están ordenados por edad
+        // 2. No hay ningún valor después de perros[inicial-1] que sea menor que perros[inicial-1]
+        // En cada iteración se busca el menor entre perros[inicial] y perros[final] y se ubica en perros[inicial]
 
         for( inicial = 0; inicial < perros.size( ); inicial++ )
         {
             int posicionMenor = inicial;
-            Perro perroMenor = ( Perro )perros.get( inicial );
+            Perro perroMenor = perros.get( inicial ); // Sin cast si usas genéricos
 
             // Buscar el perro de menor edad entre inicial y final
             for( int i = inicial + 1; i < perros.size( ); i++ )
             {
-                Perro perroPosicion = ( Perro )perros.get( i );
+                Perro perroPosicion = perros.get( i ); // Sin cast si usas genéricos
 
-                // El perro de la posici�n actual es menor que el menor encontrado hasta el momento
+                // El perro de la posición actual es menor que el menor encontrado hasta el momento
                 if( perroPosicion.compararPorEdad( perroMenor ) < 0 )
                 {
                     perroMenor = perroPosicion;
@@ -162,7 +162,7 @@ public class ExposicionPerros
 
             if( posicionMenor != inicial )
             {
-                Perro temp = ( Perro )perros.get( inicial );
+                Perro temp = perros.get( inicial ); // Sin cast si usas genéricos
                 perros.set( inicial, perroMenor );
                 perros.set( posicionMenor, temp );
             }
@@ -172,9 +172,9 @@ public class ExposicionPerros
     }
 
     /**
-     * Busca un perro seg�n su nombre y retorna la posici�n en la que se encuentra.
+     * Busca un perro según su nombre y retorna la posición en la que se encuentra.
      * @param nombre es el nombre del perro buscado - nombre!=null
-     * @return Retorna la posici�n donde se encuentra un perro con el nombre dado. Si no se encuentra ning�n perro con ese nombre retorna -1
+     * @return Retorna la posición donde se encuentra un perro con el nombre dado. Si no se encuentra ningún perro con ese nombre retorna -1
      */
     public int buscarPerro( String nombre )
     {
@@ -183,7 +183,7 @@ public class ExposicionPerros
 
         for( int i = 0; i < perros.size( ) && !termine; i++ )
         {
-            Perro perroPosicion = ( Perro )perros.get( i );
+            Perro perroPosicion = perros.get( i ); // Sin cast si usas genéricos
             String nombrePerro = perroPosicion.darNombre( );
 
             // Los nombres son iguales
@@ -198,10 +198,10 @@ public class ExposicionPerros
     }
 
     /**
-     * Busca un perro utilizando una b�squeda binaria. <br>
+     * Busca un perro utilizando una búsqueda binaria. <br>
      * <b>pre: </b> La lista de perros se encuentra ordenada por nombre.
      * @param nombre es el nombre del perro que se va a buscar - nombre!=null
-     * @return La posici�n del perro con el nombre dado. Si el perro no existe se retorna -1.
+     * @return La posición del perro con el nombre dado. Si el perro no existe se retorna -1.
      */
     public int buscarBinarioPorNombre( String nombre )
     {
@@ -212,7 +212,7 @@ public class ExposicionPerros
         while( inicio <= fin && posicion == -1 )
         {
             int medio = ( inicio + fin ) / 2;
-            Perro mitad = ( Perro )perros.get( medio );
+            Perro mitad = perros.get( medio ); // Sin cast si usas genéricos
             if( mitad.compararPorNombre( aBuscar ) == 0 )
             {
                 posicion = medio;
@@ -230,12 +230,12 @@ public class ExposicionPerros
     }
 
     /**
-     * Agrega un nuevo perro a la exposici�n. <br>
-     * <b>post: </b> El perro fue agregado a la exposici�n si no existe otro perro con el mismo nombre.
+     * Agrega un nuevo perro a la exposición. <br>
+     * <b>post: </b> El perro fue agregado a la exposición si no existe otro perro con el mismo nombre.
      * @param nombreP es el nombre del perro - nombreP != null
      * @param razaP es la raza del perro - razaP != null
      * @param imagenP es la ruta a la imagen del perro - imagenP != null
-     * @param puntosP son Los puntos del perro en la exposici�n - puntosP >= 0
+     * @param puntosP son Los puntos del perro en la exposición - puntosP >= 0
      * @param edadP es la edad en meses del perro - edadP >= 0
      * @return True si el perro fue adicionado o false de lo contrario
      */
@@ -256,23 +256,25 @@ public class ExposicionPerros
     }
 
     /**
-     * Busca el perro que tenga el mayor puntaje en la exposici�n.
-     * @return Retorna la posici�n donde se encuentra el perro con el mayor puntaje. Si no hay perros en la exposici�n se retorna -1
+     * Busca el perro que tenga el mayor puntaje en la exposición.
+     * @return Retorna la posición donde se encuentra el perro con el mayor puntaje. Si no hay perros en la exposición se retorna -1
      */
     public int buscarPerroMayorPuntaje( )
     {
         int posicion = -1;
 
-        if( perros.size( ) > 0 )
+        if( !perros.isEmpty() ) // Usar isEmpty() es más idiomático
         {
-            Perro pMayorPuntaje = ( Perro )perros.get( 0 );
+            Perro pMayorPuntaje = perros.get( 0 ); // Sin cast si usas genéricos
             posicion = 0;
             for( int i = 1; i < perros.size( ); i++ )
             {
-                Perro perroPosicion = ( Perro )perros.get( i );
+                Perro perroPosicion = perros.get( i ); // Sin cast si usas genéricos
 
-                // Los nombres son iguales
-                if( pMayorPuntaje.compararPorPuntos( perroPosicion ) == -1 )
+                // Compara el perro actual con el que tiene el mayor puntaje hasta ahora
+                // Si el perro en 'perroPosicion' tiene más puntos que 'pMayorPuntaje',
+                // entonces 'compararPorPuntos' debería devolver -1.
+                if( pMayorPuntaje.compararPorPuntos( perroPosicion ) < 0 )
                 {
                     posicion = i;
                     pMayorPuntaje = perroPosicion;
@@ -284,23 +286,25 @@ public class ExposicionPerros
     }
 
     /**
-     * Busca el perro que tenga el menor puntaje en la exposici�n.
-     * @return Retorna la posici�n donde se encuentra el perro con el menor puntaje. Si no hay perros en la exposici�n se retorna -1
+     * Busca el perro que tenga el menor puntaje en la exposición.
+     * @return Retorna la posición donde se encuentra el perro con el menor puntaje. Si no hay perros en la exposición se retorna -1
      */
     public int buscarPerroMenorPuntaje( )
     {
         int posicion = -1;
 
-        if( perros.size( ) > 0 )
+        if( !perros.isEmpty() ) // Usar isEmpty()
         {
-            Perro pMenorPuntaje = ( Perro )perros.get( 0 );
+            Perro pMenorPuntaje = perros.get( 0 ); // Sin cast si usas genéricos
             posicion = 0;
             for( int i = 1; i < perros.size( ); i++ )
             {
-                Perro perroPosicion = ( Perro )perros.get( i );
+                Perro perroPosicion = perros.get( i ); // Sin cast si usas genéricos
 
-                // Los nombres son iguales
-                if( pMenorPuntaje.compararPorPuntos( perroPosicion ) == 1 )
+                // Compara el perro actual con el que tiene el menor puntaje hasta ahora
+                // Si el perro en 'perroPosicion' tiene menos puntos que 'pMenorPuntaje',
+                // entonces 'compararPorPuntos' debería devolver 1.
+                if( pMenorPuntaje.compararPorPuntos( perroPosicion ) > 0 )
                 {
                     posicion = i;
                     pMenorPuntaje = perroPosicion;
@@ -313,22 +317,24 @@ public class ExposicionPerros
 
     /**
      * Busca el perro que tenga la mayor edad.
-     * @return Retorna la posici�n donde se encuentra el perro con la mayor edad. Si no hay perros en la exposici�n se retorna -1
+     * @return Retorna la posición donde se encuentra el perro con la mayor edad. Si no hay perros en la exposición se retorna -1
      */
     public int buscarPerroMayorEdad( )
     {
         int posicion = -1;
 
-        if( perros.size( ) > 0 )
+        if( !perros.isEmpty() ) // Usar isEmpty()
         {
-            Perro pMayorEdad = ( Perro )perros.get( 0 );
+            Perro pMayorEdad = perros.get( 0 ); // Sin cast si usas genéricos
             posicion = 0;
             for( int i = 1; i < perros.size( ); i++ )
             {
-                Perro perroPosicion = ( Perro )perros.get( i );
+                Perro perroPosicion = perros.get( i ); // Sin cast si usas genéricos
 
-                // Los nombres son iguales
-                if( pMayorEdad.compararPorEdad( perroPosicion ) == -1 )
+                // Compara el perro actual con el que tiene la mayor edad hasta ahora
+                // Si el perro en 'perroPosicion' es más viejo que 'pMayorEdad',
+                // entonces 'compararPorEdad' debería devolver -1.
+                if( pMayorEdad.compararPorEdad( perroPosicion ) < 0 )
                 {
                     posicion = i;
                     pMayorEdad = perroPosicion;
@@ -359,34 +365,117 @@ public class ExposicionPerros
      */
     private boolean buscarPerrosConNombresRepetidos( )
     {
-        for( int i = 0; i < perros.size( ); i++ )
+        // Se utiliza un HashSet para detectar duplicados de forma eficiente
+        Set<String> nombresVistos = new HashSet<>();
+        for( Perro perro : perros ) // Usar for-each loop y genéricos
         {
-            Perro perroI = ( Perro )perros.get( i );
-            for( int j = 0; j < perros.size( ); j++ )
-            {
-                if( i != j )
-                {
-                    Perro perroJ = ( Perro )perros.get( j );
-                    if( perroJ.darNombre( ).equals( perroI.darNombre( ) ) )
-                    {
-                        return true;
-                    }
-                }
+            if (!nombresVistos.add(perro.darNombre())) {
+                // Si add devuelve false, significa que el nombre ya estaba en el conjunto
+                return true;
             }
         }
         return false;
     }
 
- // -----------------------------------------------------------------
-    // Puntos de Extensión
+    // -----------------------------------------------------------------
+    // Puntos de Extensión y Métodos Auxiliares para Estadísticas
     // -----------------------------------------------------------------
 
     /**
-     * Ejecuta el punto de extensión 1.
-     * Puedes dejarlo como está o implementarle otra funcionalidad.
-     * @return respuesta 1
+     * Retorna el número total de perros en la exposición.
+     * @return El número de perros.
      */
-   
+    public int getTotalPerros() {
+        return perros.size();
+    }
+
+    /**
+     * Calcula la edad promedio de todos los perros en la exposición.
+     * @return La edad promedio en meses, o 0.0 si no hay perros.
+     */
+    public double getEdadPromedioPerros() {
+        if (perros.isEmpty()) {
+            return 0.0;
+        }
+        double sumaEdades = 0;
+        for (Perro perro : perros) { // Usar for-each loop y genéricos
+            sumaEdades += perro.darEdad();
+        }
+        return sumaEdades / perros.size();
+    }
+
+    /**
+     * Calcula el puntaje promedio de todos los perros en la exposición.
+     * @return El puntaje promedio, o 0.0 si no hay perros.
+     */
+    public double getPuntajePromedioPerros() {
+        if (perros.isEmpty()) {
+            return 0.0;
+        }
+        double sumaPuntos = 0;
+        for (Perro perro : perros) { // Usar for-each loop y genéricos
+            sumaPuntos += perro.darPuntos();
+        }
+        return sumaPuntos / perros.size();
+    }
+
+    /**
+     * Encuentra la raza de perro más común en la exposición.
+     * @return La raza que más se repite, o "N/A" si no hay perros.
+     */
+    public String getRazaMasComun() {
+        if (perros.isEmpty()) {
+            return "N/A";
+        }
+
+        Map<String, Integer> conteoRazas = new HashMap<>();
+        for (Perro perro : perros) { // Usar for-each loop y genéricos
+            String raza = perro.darRaza().toLowerCase(); // Normalizar
+            conteoRazas.put(raza, conteoRazas.getOrDefault(raza, 0) + 1);
+        }
+
+        String razaMasComun = "N/A";
+        int maxConteo = 0;
+
+        for (Map.Entry<String, Integer> entry : conteoRazas.entrySet()) {
+            if (entry.getValue() > maxConteo) {
+                maxConteo = entry.getValue();
+                razaMasComun = entry.getKey();
+            }
+            // Si hay un empate en el conteo, se mantiene el primero encontrado.
+            // Para un manejo más sofisticado de empates, se necesitaría otra lógica.
+        }
+        // Capitalizar la primera letra para una mejor presentación
+        if (!razaMasComun.equals("N/A") && razaMasComun.length() > 0) {
+             return razaMasComun.substring(0, 1).toUpperCase() + razaMasComun.substring(1);
+        }
+        return razaMasComun;
+    }
+
+    /**
+     * Ejecuta el punto de extensión 1: Calcula y retorna las estadísticas clave de la exposición.
+     * @return Un mapa con los nombres de las estadísticas y sus valores.
+     */
+    public Map<String, String> metodo1()
+    {
+        Map<String, String> estadisticas = new LinkedHashMap<>(); // Mantiene el orden de inserción
+
+        // Manejo del caso sin perros para evitar errores y mostrar "N/A"
+        if (perros.isEmpty()) {
+            estadisticas.put("Total de Perros", "0");
+            estadisticas.put("Edad Promedio", "N/A");
+            estadisticas.put("Puntaje Promedio", "N/A");
+            estadisticas.put("Raza Más Común", "N/A");
+            return estadisticas;
+        }
+
+        estadisticas.put("Total de Perros", String.valueOf(getTotalPerros()));
+        estadisticas.put("Edad Promedio", String.format("%.2f meses", getEdadPromedioPerros()));
+        estadisticas.put("Puntaje Promedio", String.format("%.2f puntos", getPuntajePromedioPerros()));
+        estadisticas.put("Raza Más Común", getRazaMasComun());
+
+        return estadisticas;
+    }
 
     /**
      * Busca y retorna el perro con la menor edad en la exposición.
@@ -398,9 +487,9 @@ public class ExposicionPerros
             return null;
         }
 
-        Perro perroMasJoven = (Perro) perros.get(0); // Asumimos que el primero es el más joven inicialmente
+        Perro perroMasJoven = perros.get(0); // Asumimos que el primero es el más joven inicialmente
         for (int i = 1; i < perros.size(); i++) {
-            Perro actual = (Perro) perros.get(i);
+            Perro actual = perros.get(i);
             // Utilizamos el método compararPorEdad de la clase Perro.
             // Si 'actual' es más joven que 'perroMasJoven', compararPorEdad debería retornar -1.
             if (actual.compararPorEdad(perroMasJoven) == -1) {
@@ -409,7 +498,7 @@ public class ExposicionPerros
         }
         return perroMasJoven;
     }
-    
+
     /**
      * Ejecuta el punto de extensión 2: Busca el perro más joven.
      * Este método es el que se conecta con el botón "Opción 2" de la interfaz.
@@ -429,113 +518,4 @@ public class ExposicionPerros
             return "No hay perros registrados para encontrar el más joven.";
         }
     }
-
-    /**
-     * Ejecuta el punto de extensi�n 1.
-     * @return respuesta 1
-=======
-    // -----------------------------------------------------------------
-    // Métodos Auxiliares para Estadísticas
-    // -----------------------------------------------------------------
-
-    /**
-     * Retorna el número total de perros en la exposición.
-     * @return El número de perros.
->>>>>>> 755e026 (implementacion de los metodos que calculan la edad promedio y el puntaje promedio)
-     */
-    public int getTotalPerros() {
-    	return perros.size();
-    }
-    
-    /**
-     * Calcula la edad promedio de todos los perros en la exposición.
-     * @return La edad promedio en meses, o 0.0 si no hay perros.
-     */
-    public double getEdadPromedioPerros() {
-        if (perros.isEmpty()) {
-            return 0.0;
-        }
-        double sumaEdades = 0;
-        for (Object obj : perros) {
-            Perro perro = (Perro) obj;
-            sumaEdades += perro.darEdad();
-        }
-        return sumaEdades / perros.size();
-    }
-    
-    /**
-     * Calcula el puntaje promedio de todos los perros en la exposición.
-     * @return El puntaje promedio, o 0.0 si no hay perros.
-     */
-    public double getPuntajePromedioPerros() {
-        if (perros.isEmpty()) {
-            return 0.0;
-        }
-        double sumaPuntos = 0;
-        for (Object obj : perros) {
-            Perro perro = (Perro) obj;
-            sumaPuntos += perro.darPuntos();
-        }
-        return sumaPuntos / perros.size();
-    }
-    
-
-    /**
-     * Encuentra la raza de perro más común en la exposición.
-     * @return La raza que más se repite, o "N/A" si no hay perros.
-     */
-    public String getRazaMasComun() {
-        if (perros.isEmpty()) {
-            return "N/A";
-        }
-        
-        Map<String, Integer> conteoRazas = new HashMap<>();
-        for (Object obj : perros) {
-            Perro perro = (Perro) obj;
-            String raza = perro.darRaza().toLowerCase(); // Normalizar
-            conteoRazas.put(raza, conteoRazas.getOrDefault(raza, 0) + 1);
-        }
-        
-        String razaMasComun = "N/A";
-        int maxConteo = 0;
-        
-
-        for (Map.Entry<String, Integer> entry : conteoRazas.entrySet()) {
-            if (entry.getValue() > maxConteo) {
-                maxConteo = entry.getValue();
-                razaMasComun = entry.getKey();
-            }
-        }
-        // Capitalizar la primera letra para una mejor presentación
-        if (!razaMasComun.equals("N/A") && razaMasComun.length() > 0) {
-             return razaMasComun.substring(0, 1).toUpperCase() + razaMasComun.substring(1);
-        }
-        return razaMasComun;
-    }
-        
-
-
-    public Map<String, String> metodo1( )
-
-    {
-    	Map<String, String> estadisticas = new LinkedHashMap<>(); // Mantiene el orden de inserción
-
-        // Manejo del caso sin perros para evitar errores y mostrar "N/A"
-        if (perros.isEmpty()) {
-            estadisticas.put("Total de Perros", "0");
-            estadisticas.put("Edad Promedio", "N/A");
-            estadisticas.put("Puntaje Promedio", "N/A");
-            estadisticas.put("Raza Más Común", "N/A");
-            return estadisticas;
-        }
-
-        estadisticas.put("Total de Perros", String.valueOf(getTotalPerros()));
-        estadisticas.put("Edad Promedio", String.format("%.2f meses", getEdadPromedioPerros()));
-        estadisticas.put("Puntaje Promedio", String.format("%.2f puntos", getPuntajePromedioPerros()));
-        estadisticas.put("Raza Más Común", getRazaMasComun());
-        
-        return estadisticas;
-    }
-
- 
 }
