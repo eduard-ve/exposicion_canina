@@ -1,12 +1,12 @@
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * $Id: ExposicionPerros.java,v 1.5 2006/08/04 15:12:57 da-romer Exp $ 
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación 
+ * Universidad de los Andes (Bogotï¿½ - Colombia)
+ * Departamento de Ingenierï¿½a de Sistemas y Computaciï¿½n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
  * Ejercicio: n7_exposicionCanina 
- * Autor: Mario Sánchez - 26/08/2005 
+ * Autor: Mario Sï¿½nchez - 26/08/2005 
  * Modificado por: Daniel Romero- 30/06/2006
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
  */
@@ -36,7 +36,7 @@ public class ExposicionPerros
     // -----------------------------------------------------------------
 
     /**
-     * Construye un nuevo manejador de perros vacío.
+     * Construye un nuevo manejador de perros vacï¿½o.
      */
     public ExposicionPerros( )
     {
@@ -44,7 +44,7 @@ public class ExposicionPerros
     }
 
     // -----------------------------------------------------------------
-    // Métodos
+    // Mï¿½todos
     // -----------------------------------------------------------------
 
     /**
@@ -59,7 +59,7 @@ public class ExposicionPerros
 
     /**
      * Organiza la lista de perros por raza usando el algoritmo de burbuja. <br>
-     * <b>post: </b>La lista de perros está ordenada por raza (orden ascendente).
+     * <b>post: </b>La lista de perros estï¿½ ordenada por raza (orden ascendente).
      */
     public void ordenarPorRaza( )
     {
@@ -83,7 +83,7 @@ public class ExposicionPerros
 
     /**
      * Organiza la lista de perros por nombre usando el algoritmo de burbuja. <br>
-     * <b>post: </b>La lista de perros está ordenada por nombre (orden ascendente).
+     * <b>post: </b>La lista de perros estï¿½ ordenada por nombre (orden ascendente).
      */
     public void ordenarPorNombre( )
     {
@@ -105,8 +105,8 @@ public class ExposicionPerros
         verificarInvariante( );
     }
     /**
-     * Organiza la lista de perros por puntos usando el algoritmo de inserción. <br>
-     * <b>post: </b>La lista de perros está ordenada por puntos (orden ascendente).
+     * Organiza la lista de perros por puntos usando el algoritmo de inserciï¿½n. <br>
+     * <b>post: </b>La lista de perros estï¿½ ordenada por puntos (orden ascendente).
      */
     public void ordenarPorPuntos( )
     {
@@ -130,17 +130,17 @@ public class ExposicionPerros
     }
 
     /**
-     * Organiza la lista de perros por edad usando el algoritmo de selección. <br>
-     * <b>post: </b>La lista de perros está ordenada por edad (orden ascendente).
+     * Organiza la lista de perros por edad usando el algoritmo de selecciï¿½n. <br>
+     * <b>post: </b>La lista de perros estï¿½ ordenada por edad (orden ascendente).
      */
     public void ordenarPorEdad( )
     {
         int inicial;
 
-        // En cada iteración se sabe que:
-        // 1. Todos los valores antes de perros[inicial] están ordenados por edad
-        // 2. No hay ningún valor después de perros[inicial-1] que sea menor que perros[inicial-1]
-        // En cada iteración se busca el menor entre perros[inicial] y perros[final] y se ubica en perros[inicial]
+        // En cada iteraciï¿½n se sabe que:
+        // 1. Todos los valores antes de perros[inicial] estï¿½n ordenados por edad
+        // 2. No hay ningï¿½n valor despuï¿½s de perros[inicial-1] que sea menor que perros[inicial-1]
+        // En cada iteraciï¿½n se busca el menor entre perros[inicial] y perros[final] y se ubica en perros[inicial]
 
         for( inicial = 0; inicial < perros.size( ); inicial++ )
         {
@@ -152,7 +152,7 @@ public class ExposicionPerros
             {
                 Perro perroPosicion = ( Perro )perros.get( i );
 
-                // El perro de la posición actual es menor que el menor encontrado hasta el momento
+                // El perro de la posiciï¿½n actual es menor que el menor encontrado hasta el momento
                 if( perroPosicion.compararPorEdad( perroMenor ) < 0 )
                 {
                     perroMenor = perroPosicion;
@@ -172,9 +172,9 @@ public class ExposicionPerros
     }
 
     /**
-     * Busca un perro según su nombre y retorna la posición en la que se encuentra.
+     * Busca un perro segï¿½n su nombre y retorna la posiciï¿½n en la que se encuentra.
      * @param nombre es el nombre del perro buscado - nombre!=null
-     * @return Retorna la posición donde se encuentra un perro con el nombre dado. Si no se encuentra ningún perro con ese nombre retorna -1
+     * @return Retorna la posiciï¿½n donde se encuentra un perro con el nombre dado. Si no se encuentra ningï¿½n perro con ese nombre retorna -1
      */
     public int buscarPerro( String nombre )
     {
@@ -198,10 +198,10 @@ public class ExposicionPerros
     }
 
     /**
-     * Busca un perro utilizando una búsqueda binaria. <br>
+     * Busca un perro utilizando una bï¿½squeda binaria. <br>
      * <b>pre: </b> La lista de perros se encuentra ordenada por nombre.
      * @param nombre es el nombre del perro que se va a buscar - nombre!=null
-     * @return La posición del perro con el nombre dado. Si el perro no existe se retorna -1.
+     * @return La posiciï¿½n del perro con el nombre dado. Si el perro no existe se retorna -1.
      */
     public int buscarBinarioPorNombre( String nombre )
     {
@@ -230,12 +230,12 @@ public class ExposicionPerros
     }
 
     /**
-     * Agrega un nuevo perro a la exposición. <br>
-     * <b>post: </b> El perro fue agregado a la exposición si no existe otro perro con el mismo nombre.
+     * Agrega un nuevo perro a la exposiciï¿½n. <br>
+     * <b>post: </b> El perro fue agregado a la exposiciï¿½n si no existe otro perro con el mismo nombre.
      * @param nombreP es el nombre del perro - nombreP != null
      * @param razaP es la raza del perro - razaP != null
      * @param imagenP es la ruta a la imagen del perro - imagenP != null
-     * @param puntosP son Los puntos del perro en la exposición - puntosP >= 0
+     * @param puntosP son Los puntos del perro en la exposiciï¿½n - puntosP >= 0
      * @param edadP es la edad en meses del perro - edadP >= 0
      * @return True si el perro fue adicionado o false de lo contrario
      */
@@ -256,8 +256,8 @@ public class ExposicionPerros
     }
 
     /**
-     * Busca el perro que tenga el mayor puntaje en la exposición.
-     * @return Retorna la posición donde se encuentra el perro con el mayor puntaje. Si no hay perros en la exposición se retorna -1
+     * Busca el perro que tenga el mayor puntaje en la exposiciï¿½n.
+     * @return Retorna la posiciï¿½n donde se encuentra el perro con el mayor puntaje. Si no hay perros en la exposiciï¿½n se retorna -1
      */
     public int buscarPerroMayorPuntaje( )
     {
@@ -284,8 +284,8 @@ public class ExposicionPerros
     }
 
     /**
-     * Busca el perro que tenga el menor puntaje en la exposición.
-     * @return Retorna la posición donde se encuentra el perro con el menor puntaje. Si no hay perros en la exposición se retorna -1
+     * Busca el perro que tenga el menor puntaje en la exposiciï¿½n.
+     * @return Retorna la posiciï¿½n donde se encuentra el perro con el menor puntaje. Si no hay perros en la exposiciï¿½n se retorna -1
      */
     public int buscarPerroMenorPuntaje( )
     {
@@ -313,7 +313,7 @@ public class ExposicionPerros
 
     /**
      * Busca el perro que tenga la mayor edad.
-     * @return Retorna la posición donde se encuentra el perro con la mayor edad. Si no hay perros en la exposición se retorna -1
+     * @return Retorna la posiciï¿½n donde se encuentra el perro con la mayor edad. Si no hay perros en la exposiciï¿½n se retorna -1
      */
     public int buscarPerroMayorEdad( )
     {
@@ -377,12 +377,64 @@ public class ExposicionPerros
         return false;
     }
 
-    // -----------------------------------------------------------------
-    // Puntos de Extensión
+ // -----------------------------------------------------------------
+    // Puntos de ExtensiÃ³n
     // -----------------------------------------------------------------
 
     /**
-     * Ejecuta el punto de extensión 1.
+     * Ejecuta el punto de extensiÃ³n 1.
+     * Puedes dejarlo como estÃ¡ o implementarle otra funcionalidad.
+     * @return respuesta 1
+     */
+    public String metodo1( )
+    {
+        return "Respuesta del punto de extensiÃ³n 1.";
+    }
+
+    /**
+     * Busca y retorna el perro con la menor edad en la exposiciÃ³n.
+     * Si no hay perros, retorna null.
+     * @return El perro mÃ¡s joven o null si la lista estÃ¡ vacÃ­a.
+     */
+    public Perro darPerroMasJoven() {
+        if (perros == null || perros.isEmpty()) {
+            return null;
+        }
+
+        Perro perroMasJoven = (Perro) perros.get(0); // Asumimos que el primero es el mÃ¡s joven inicialmente
+        for (int i = 1; i < perros.size(); i++) {
+            Perro actual = (Perro) perros.get(i);
+            // Utilizamos el mÃ©todo compararPorEdad de la clase Perro.
+            // Si 'actual' es mÃ¡s joven que 'perroMasJoven', compararPorEdad deberÃ­a retornar -1.
+            if (actual.compararPorEdad(perroMasJoven) == -1) {
+                perroMasJoven = actual; // El perro actual es el nuevo mÃ¡s joven
+            }
+        }
+        return perroMasJoven;
+    }
+    
+    /**
+     * Ejecuta el punto de extensiÃ³n 2: Busca el perro mÃ¡s joven.
+     * Este mÃ©todo es el que se conecta con el botÃ³n "OpciÃ³n 2" de la interfaz.
+     * @return Una cadena con la informaciÃ³n detallada del perro mÃ¡s joven, o un mensaje si no hay perros.
+     */
+    public String metodo2() {
+        Perro masJoven = darPerroMasJoven(); // Llama al mÃ©todo que encuentra al perro mÃ¡s joven
+        if (masJoven != null) {
+            // Formatea la informaciÃ³n del perro mÃ¡s joven para mostrarla al usuario
+            return "El perro mÃ¡s joven es:\n" +
+                   "Nombre: " + masJoven.darNombre() + "\n" +
+                   "Raza: " + masJoven.darRaza() + "\n" +
+                   "Edad: " + masJoven.darEdad() + " meses\n" +
+                   "Puntos: " + masJoven.darPuntos();
+        } else {
+            // Mensaje si no hay perros registrados
+            return "No hay perros registrados para encontrar el mÃ¡s joven.";
+        }
+    }
+
+    /**
+     * Ejecuta el punto de extensiï¿½n 1.
      * @return respuesta 1
      */
     public String metodo1( )
@@ -390,12 +442,5 @@ public class ExposicionPerros
         return "respuesta1";
     }
 
-    /**
-     * Ejecuta el punto de extensión 2.
-     * @return respuesta 2
-     */
-    public String metodo2( )
-    {
-        return "respuesta2";
-    }
+    
 }
