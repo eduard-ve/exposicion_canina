@@ -31,7 +31,7 @@ public class PanelExtension extends JPanel implements ActionListener
     /**
      * El comando para el bot�n 1
      */
-    private final String OPCION_1 = "opcion 1";
+    private final String OPCION_1 = "VER_ESTADISTICAS";
 
     /**
      * El comando para el bot�n 2
@@ -85,6 +85,7 @@ public class PanelExtension extends JPanel implements ActionListener
      */
     private void inicializar( )
     {
+
         setBorder( new TitledBorder( "Puntos de Extensi�n" ) );
 
         setLayout( new FlowLayout( ) );
@@ -93,6 +94,14 @@ public class PanelExtension extends JPanel implements ActionListener
         botonOpcion1.addActionListener( this );
 
         botonOpcion2 = new JButton( "Perro más joven" );
+        setBorder( new TitledBorder( "Puntos de Extension" ) );
+
+        setLayout( new FlowLayout( ) );
+        botonOpcion1 = new JButton( "Ver Estadisticas" );
+        botonOpcion1.setActionCommand( OPCION_1 );
+        botonOpcion1.addActionListener( this );
+
+        botonOpcion2 = new JButton( "Opci�n 2" );
         botonOpcion2.setActionCommand( OPCION_2 );
         botonOpcion2.addActionListener( this );
 

@@ -377,7 +377,6 @@ public class ExposicionPerros
         return false;
     }
 
-
  // -----------------------------------------------------------------
     // Puntos de Extensión
     // -----------------------------------------------------------------
@@ -387,10 +386,7 @@ public class ExposicionPerros
      * Puedes dejarlo como está o implementarle otra funcionalidad.
      * @return respuesta 1
      */
-    public String metodo1( )
-    {
-        return "Respuesta del punto de extensión 1.";
-    }
+   
 
     /**
      * Busca y retorna el perro con la menor edad en la exposición.
@@ -518,7 +514,9 @@ public class ExposicionPerros
     }
         
 
-    public String darEstadisticasClave( )
+
+    public Map<String, String> metodo1( )
+
     {
     	Map<String, String> estadisticas = new LinkedHashMap<>(); // Mantiene el orden de inserción
 
