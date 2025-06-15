@@ -483,4 +483,38 @@ public class ExposicionPerros
         return sumaPuntos / perros.size();
     }
     
+
+    /**
+     * Encuentra la raza de perro más común en la exposición.
+     * @return La raza que más se repite, o "N/A" si no hay perros.
+     */
+    public String getRazaMasComun() {
+        if (perros.isEmpty()) {
+            return "N/A";
+        }
+        
+        Map<String, Integer> conteoRazas = new HashMap<>();
+        for (Object obj : perros) {
+            Perro perro = (Perro) obj;
+            String raza = perro.darRaza().toLowerCase(); // Normalizar
+            conteoRazas.put(raza, conteoRazas.getOrDefault(raza, 0) + 1);
+        }
+        
+        String razaMasComun = "N/A";
+        int maxConteo = 0;
+        
+
+        for (Map.Entry<String, Integer> entry : conteoRazas.entrySet()) {
+            if (entry.getValue() > maxConteo) {
+                maxConteo = entry.getValue();
+                razaMasComun = entry.getKey();
+            }
+        }
+        // Capitalizar la primera letra para una mejor presentación
+        if (!razaMasComun.equals("N/A") && razaMasComun.length() > 0) {
+             return razaMasComun.substring(0, 1).toUpperCase() + razaMasComun.substring(1);
+        }
+        return razaMasComun;
+    }
+        
 }
